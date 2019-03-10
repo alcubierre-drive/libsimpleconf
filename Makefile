@@ -3,6 +3,8 @@ OBJ=libsimpleconf.o
 SHARED=libsimpleconf.so
 STATIC=libsimpleconf.a
 
+.PHONY: all clean
+
 all: $(STATIC) $(SHARED)
 
 $(OBJ):
@@ -13,3 +15,6 @@ $(STATIC): $(OBJ)
 
 $(SHARED): $(OBJ)
 	$(CC) -shared -o $(SHARED) $(OBJ)
+
+clean:
+	$(RM) $(STATIC) $(OBJ) $(SHARED)
