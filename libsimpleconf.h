@@ -15,6 +15,9 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 // the four different types that are supported by this library
 #define CHAR_TYPE 1
 typedef struct {
@@ -85,6 +88,10 @@ void scfg_delete( simpleconf* );
 
 #ifdef DEBUG
 void scfg_dbg( const simpleconf* );
+#endif
+
+#ifdef __cplusplus
+};
 #endif
 
 // sample implementation
